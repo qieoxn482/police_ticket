@@ -19,7 +19,7 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <!--<th scope="col"><?= $this->Paginator->sort('id') ?></th>-->
                 <th scope="col"><?= $this->Paginator->sort('role_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('phone') ?></th>
@@ -33,7 +33,7 @@
         <tbody>
             <?php foreach ($users as $user): ?>
             <tr>
-                <td><?= $this->Number->format($user->id) ?></td>
+                <!--<td><?= $this->Number->format($user->id) ?></td>-->
                 <td><?= $user->has('role') ? $this->Html->link($user->role->name, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
                 <td><?= h($user->name) ?></td>
                 <td><?= h($user->phone) ?></td>

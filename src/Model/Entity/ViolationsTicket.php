@@ -6,6 +6,7 @@ use Cake\ORM\Entity;
 /**
  * ViolationsTicket Entity
  *
+ * @property int $id
  * @property int $ticket_id
  * @property int $violation_id
  *

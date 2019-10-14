@@ -19,10 +19,10 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
+                <!--<th scope="col"><?= $this->Paginator->sort('id') ?></th>-->
+                <th scope="col"><?= $this->Paginator->sort('created by user_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('fee_amount') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('violation_datetime') ?></th>
+                <!--<th scope="col"><?= $this->Paginator->sort('violation_datetime') ?></th>-->
                 <th scope="col"><?= $this->Paginator->sort('violation_description') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -30,10 +30,10 @@
         <tbody>
             <?php foreach ($violations as $violation): ?>
             <tr>
-                <td><?= $this->Number->format($violation->id) ?></td>
+                <!--<td><?= $this->Number->format($violation->id) ?></td>-->
                 <td><?= $violation->has('user') ? $this->Html->link($violation->user->name, ['controller' => 'Users', 'action' => 'view', $violation->user->id]) : '' ?></td>
                 <td><?= h($violation->fee_amount) ?></td>
-                <td><?= h($violation->violation_datetime) ?></td>
+                <!--<td><?= h($violation->violation_datetime) ?></td>-->
                 <td><?= h($violation->violation_description) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $violation->id]) ?>

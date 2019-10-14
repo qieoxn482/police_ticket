@@ -110,4 +110,41 @@ class ViolationsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function initialize()
+    {
+        parent::initialize();
+        $this->Auth->allow(['logout']);
+    }
+
+    public function isAuthorized($user)
+    {
+        $action = $this->request->getParam('action');
+        $param = $this->request->getParam('pass.0');
+
+        #admin
+        if($user['role_id'] === 1){
+            if (in_array($action, ['index', 'view','add','edit','delete'])){
+                return true;
+            }
+        }
+
+        #chief
+        elseif ($user['role_id'] === 3){
+            if (in_array($action, ['index', 'view','add','edit','delete'])){
+                return true;
+            }
+        }
+        #officer
+        elseif ($user['role_id'] === 2){
+            if (in_array($action, ['index', 'view'])){
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+
+
 }

@@ -21,7 +21,7 @@
     <h3><?= h($violation->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('User') ?></th>
+            <th scope="row"><?= __('Created by User') ?></th>
             <td><?= $violation->has('user') ? $this->Html->link($violation->user->name, ['controller' => 'Users', 'action' => 'view', $violation->user->id]) : '' ?></td>
         </tr>
         <tr>

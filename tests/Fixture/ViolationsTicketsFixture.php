@@ -15,6 +15,7 @@ class ViolationsTicketsFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
+        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'ticket_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'violation_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
@@ -22,6 +23,7 @@ class ViolationsTicketsFixture extends TestFixture
             'ticket_id' => ['type' => 'index', 'columns' => ['ticket_id'], 'length' => []],
         ],
         '_constraints' => [
+            'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
             'violations_tickets_ibfk_1' => ['type' => 'foreign', 'columns' => ['violation_id'], 'references' => ['violations', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
             'violations_tickets_ibfk_2' => ['type' => 'foreign', 'columns' => ['ticket_id'], 'references' => ['tickets', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
         ],
@@ -40,6 +42,7 @@ class ViolationsTicketsFixture extends TestFixture
     {
         $this->records = [
             [
+                'id' => 1,
                 'ticket_id' => 1,
                 'violation_id' => 1
             ],

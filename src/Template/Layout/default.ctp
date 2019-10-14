@@ -51,8 +51,13 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         echo $this->Html->link('login', ['controller' => 'Users', 'action' => 'login']);
                     }
                     ?></li>
-                <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li>
+                <li><?= $this->Html->link('Info', ['controller' => 'Users', 'action' => 'view', $loguser['id']]);?></li>
+                <li>
+                    <?= $this->Html-> link('About', ['controller' => 'about', 'action' => 'index']); ?>
+                </li>
+                <li>
+                    <?= $this->Html-> link('Home', ['controller' => 'violations', 'action' => 'index']); ?>
+                </li>
             </ul>
         </div>
     </nav>
