@@ -8,6 +8,8 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Violation'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Tickets'), ['controller' => 'Tickets', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?></li>
     </ul>
@@ -18,7 +20,8 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('vehicule_licence') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('fee_amount') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('violation_datetime') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('violation_description') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -28,7 +31,8 @@
             <?php foreach ($violations as $violation): ?>
             <tr>
                 <td><?= $this->Number->format($violation->id) ?></td>
-                <td><?= h($violation->vehicule_licence) ?></td>
+                <td><?= $violation->has('user') ? $this->Html->link($violation->user->name, ['controller' => 'Users', 'action' => 'view', $violation->user->id]) : '' ?></td>
+                <td><?= h($violation->fee_amount) ?></td>
                 <td><?= h($violation->violation_datetime) ?></td>
                 <td><?= h($violation->violation_description) ?></td>
                 <td class="actions">

@@ -11,6 +11,8 @@
         <li><?= $this->Form->postLink(__('Delete Violation'), ['action' => 'delete', $violation->id], ['confirm' => __('Are you sure you want to delete # {0}?', $violation->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Violations'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Violation'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Tickets'), ['controller' => 'Tickets', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?> </li>
     </ul>
@@ -19,8 +21,12 @@
     <h3><?= h($violation->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Vehicule Licence') ?></th>
-            <td><?= h($violation->vehicule_licence) ?></td>
+            <th scope="row"><?= __('User') ?></th>
+            <td><?= $violation->has('user') ? $this->Html->link($violation->user->name, ['controller' => 'Users', 'action' => 'view', $violation->user->id]) : '' ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Fee Amount') ?></th>
+            <td><?= h($violation->fee_amount) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Violation Description') ?></th>
@@ -41,8 +47,7 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('User Id') ?></th>
-                <th scope="col"><?= __('Amount') ?></th>
+                <th scope="col"><?= __('Licence Plate') ?></th>
                 <th scope="col"><?= __('Datetime Issued') ?></th>
                 <th scope="col"><?= __('Datetime Paid') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -50,8 +55,7 @@
             <?php foreach ($violation->tickets as $tickets): ?>
             <tr>
                 <td><?= h($tickets->id) ?></td>
-                <td><?= h($tickets->user_id) ?></td>
-                <td><?= h($tickets->amount) ?></td>
+                <td><?= h($tickets->licence_plate) ?></td>
                 <td><?= h($tickets->datetime_issued) ?></td>
                 <td><?= h($tickets->datetime_paid) ?></td>
                 <td class="actions">

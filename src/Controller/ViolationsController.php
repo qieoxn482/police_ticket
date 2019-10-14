@@ -19,6 +19,9 @@ class ViolationsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Users']
+        ];
         $violations = $this->paginate($this->Violations);
 
         $this->set(compact('violations'));
@@ -34,7 +37,7 @@ class ViolationsController extends AppController
     public function view($id = null)
     {
         $violation = $this->Violations->get($id, [
-            'contain' => ['Tickets']
+            'contain' => ['Users', 'Tickets']
         ]);
 
         $this->set('violation', $violation);
@@ -57,8 +60,9 @@ class ViolationsController extends AppController
             }
             $this->Flash->error(__('The violation could not be saved. Please, try again.'));
         }
+        $users = $this->Violations->Users->find('list', ['limit' => 200]);
         $tickets = $this->Violations->Tickets->find('list', ['limit' => 200]);
-        $this->set(compact('violation', 'tickets'));
+        $this->set(compact('violation', 'users', 'tickets'));
     }
 
     /**
@@ -82,8 +86,9 @@ class ViolationsController extends AppController
             }
             $this->Flash->error(__('The violation could not be saved. Please, try again.'));
         }
+        $users = $this->Violations->Users->find('list', ['limit' => 200]);
         $tickets = $this->Violations->Tickets->find('list', ['limit' => 200]);
-        $this->set(compact('violation', 'tickets'));
+        $this->set(compact('violation', 'users', 'tickets'));
     }
 
     /**

@@ -21,7 +21,6 @@ class TicketsControllerTest extends TestCase
      */
     public $fixtures = [
         'app.Tickets',
-        'app.Users',
         'app.Violations',
         'app.ViolationsTickets'
     ];

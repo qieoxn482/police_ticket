@@ -14,8 +14,6 @@
             )
         ?></li>
         <li><?= $this->Html->link(__('List Tickets'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Violations'), ['controller' => 'Violations', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Violation'), ['controller' => 'Violations', 'action' => 'add']) ?></li>
     </ul>
@@ -25,8 +23,7 @@
     <fieldset>
         <legend><?= __('Edit Ticket') ?></legend>
         <?php
-            echo $this->Form->control('user_id', ['options' => $users]);
-            echo $this->Form->control('amount');
+            echo $this->Form->control('licence_plate');
             echo $this->Form->control('datetime_issued');
             echo $this->Form->control('datetime_paid', ['empty' => true]);
             echo $this->Form->control('violations._ids', ['options' => $violations]);

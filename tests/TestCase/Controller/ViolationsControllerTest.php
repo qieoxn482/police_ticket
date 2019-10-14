@@ -21,6 +21,7 @@ class ViolationsControllerTest extends TestCase
      */
     public $fixtures = [
         'app.Violations',
+        'app.Users',
         'app.Tickets',
         'app.ViolationsTickets'
     ];

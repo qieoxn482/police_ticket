@@ -22,8 +22,8 @@ class ViolationsTicketsFixture extends TestFixture
             'ticket_id' => ['type' => 'index', 'columns' => ['ticket_id'], 'length' => []],
         ],
         '_constraints' => [
-            'violations_tickets_ibfk_1' => ['type' => 'foreign', 'columns' => ['ticket_id'], 'references' => ['tickets', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
-            'violations_tickets_ibfk_2' => ['type' => 'foreign', 'columns' => ['violation_id'], 'references' => ['violations', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
+            'violations_tickets_ibfk_1' => ['type' => 'foreign', 'columns' => ['violation_id'], 'references' => ['violations', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
+            'violations_tickets_ibfk_2' => ['type' => 'foreign', 'columns' => ['ticket_id'], 'references' => ['tickets', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',

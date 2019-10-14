@@ -11,13 +11,19 @@
         <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Tickets'), ['controller' => 'Tickets', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ticket'), ['controller' => 'Tickets', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Violations'), ['controller' => 'Violations', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Violation'), ['controller' => 'Violations', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="users view large-9 medium-8 columns content">
     <h3><?= h($user->name) ?></h3>
     <table class="vertical-table">
+        <tr>
+            <th scope="row"><?= __('Role') ?></th>
+            <td><?= $user->has('role') ? $this->Html->link($user->role->name, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
+        </tr>
         <tr>
             <th scope="row"><?= __('Name') ?></th>
             <td><?= h($user->name) ?></td>
@@ -48,28 +54,28 @@
         </tr>
     </table>
     <div class="related">
-        <h4><?= __('Related Tickets') ?></h4>
-        <?php if (!empty($user->tickets)): ?>
+        <h4><?= __('Related Violations') ?></h4>
+        <?php if (!empty($user->violations)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
-                <th scope="col"><?= __('Amount') ?></th>
-                <th scope="col"><?= __('Datetime Issued') ?></th>
-                <th scope="col"><?= __('Datetime Paid') ?></th>
+                <th scope="col"><?= __('Fee Amount') ?></th>
+                <th scope="col"><?= __('Violation Datetime') ?></th>
+                <th scope="col"><?= __('Violation Description') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($user->tickets as $tickets): ?>
+            <?php foreach ($user->violations as $violations): ?>
             <tr>
-                <td><?= h($tickets->id) ?></td>
-                <td><?= h($tickets->user_id) ?></td>
-                <td><?= h($tickets->amount) ?></td>
-                <td><?= h($tickets->datetime_issued) ?></td>
-                <td><?= h($tickets->datetime_paid) ?></td>
+                <td><?= h($violations->id) ?></td>
+                <td><?= h($violations->user_id) ?></td>
+                <td><?= h($violations->fee_amount) ?></td>
+                <td><?= h($violations->violation_datetime) ?></td>
+                <td><?= h($violations->violation_description) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Tickets', 'action' => 'view', $tickets->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Tickets', 'action' => 'edit', $tickets->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Tickets', 'action' => 'delete', $tickets->id], ['confirm' => __('Are you sure you want to delete # {0}?', $tickets->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'Violations', 'action' => 'view', $violations->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Violations', 'action' => 'edit', $violations->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Violations', 'action' => 'delete', $violations->id], ['confirm' => __('Are you sure you want to delete # {0}?', $violations->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

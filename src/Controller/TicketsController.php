@@ -19,9 +19,6 @@ class TicketsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Users']
-        ];
         $tickets = $this->paginate($this->Tickets);
 
         $this->set(compact('tickets'));
@@ -37,7 +34,7 @@ class TicketsController extends AppController
     public function view($id = null)
     {
         $ticket = $this->Tickets->get($id, [
-            'contain' => ['Users', 'Violations']
+            'contain' => ['Violations']
         ]);
 
         $this->set('ticket', $ticket);
@@ -60,9 +57,8 @@ class TicketsController extends AppController
             }
             $this->Flash->error(__('The ticket could not be saved. Please, try again.'));
         }
-        $users = $this->Tickets->Users->find('list', ['limit' => 200]);
         $violations = $this->Tickets->Violations->find('list', ['limit' => 200]);
-        $this->set(compact('ticket', 'users', 'violations'));
+        $this->set(compact('ticket', 'violations'));
     }
 
     /**
@@ -86,9 +82,8 @@ class TicketsController extends AppController
             }
             $this->Flash->error(__('The ticket could not be saved. Please, try again.'));
         }
-        $users = $this->Tickets->Users->find('list', ['limit' => 200]);
         $violations = $this->Tickets->Violations->find('list', ['limit' => 200]);
-        $this->set(compact('ticket', 'users', 'violations'));
+        $this->set(compact('ticket', 'violations'));
     }
 
     /**

@@ -9,7 +9,6 @@ use Cake\Validation\Validator;
 /**
  * Tickets Model
  *
- * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\ViolationsTable&\Cake\ORM\Association\BelongsToMany $Violations
  *
  * @method \App\Model\Entity\Ticket get($primaryKey, $options = [])
@@ -37,10 +36,6 @@ class TicketsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Users', [
-            'foreignKey' => 'user_id',
-            'joinType' => 'INNER'
-        ]);
         $this->belongsToMany('Violations', [
             'foreignKey' => 'ticket_id',
             'targetForeignKey' => 'violation_id',
@@ -61,10 +56,10 @@ class TicketsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('amount')
-            ->maxLength('amount', 255)
-            ->requirePresence('amount', 'create')
-            ->notEmptyString('amount');
+            ->scalar('licence_plate')
+            ->maxLength('licence_plate', 255)
+            ->requirePresence('licence_plate', 'create')
+            ->notEmptyString('licence_plate');
 
         $validator
             ->dateTime('datetime_issued')
@@ -75,19 +70,5 @@ class TicketsTable extends Table
             ->allowEmptyDateTime('datetime_paid');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['user_id'], 'Users'));
-
-        return $rules;
     }
 }

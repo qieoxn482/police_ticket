@@ -24,7 +24,6 @@ class TicketsTableTest extends TestCase
      */
     public $fixtures = [
         'app.Tickets',
-        'app.Users',
         'app.Violations'
     ];
 
@@ -68,16 +67,6 @@ class TicketsTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

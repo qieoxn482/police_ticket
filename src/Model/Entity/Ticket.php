@@ -7,12 +7,10 @@ use Cake\ORM\Entity;
  * Ticket Entity
  *
  * @property int $id
- * @property int $user_id
- * @property string $amount
+ * @property string $licence_plate
  * @property \Cake\I18n\FrozenTime $datetime_issued
  * @property \Cake\I18n\FrozenTime|null $datetime_paid
  *
- * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\Violation[] $violations
  */
 class Ticket extends Entity
@@ -27,11 +25,9 @@ class Ticket extends Entity
      * @var array
      */
     protected $_accessible = [
-        'user_id' => true,
-        'amount' => true,
+        'licence_plate' => true,
         'datetime_issued' => true,
         'datetime_paid' => true,
-        'user' => true,
         'violations' => true
     ];
 }

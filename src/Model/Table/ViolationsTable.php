@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Violations Model
  *
+ * @property \App\Model\Table\UsersTable&\Cake\ORM\Association\BelongsTo $Users
+ * @property &\Cake\ORM\Association\BelongsToMany $Files
  * @property \App\Model\Table\TicketsTable&\Cake\ORM\Association\BelongsToMany $Tickets
  *
  * @method \App\Model\Entity\Violation get($primaryKey, $options = [])
@@ -36,6 +38,15 @@ class ViolationsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
+        $this->belongsTo('Users', [
+            'foreignKey' => 'user_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsToMany('Files', [
+            'foreignKey' => 'violation_id',
+            'targetForeignKey' => 'file_id',
+            'joinTable' => 'files_violations'
+        ]);
         $this->belongsToMany('Tickets', [
             'foreignKey' => 'violation_id',
             'targetForeignKey' => 'ticket_id',
@@ -56,10 +67,10 @@ class ViolationsTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('vehicule_licence')
-            ->maxLength('vehicule_licence', 8)
-            ->requirePresence('vehicule_licence', 'create')
-            ->notEmptyString('vehicule_licence');
+            ->scalar('fee_amount')
+            ->maxLength('fee_amount', 255)
+            ->requirePresence('fee_amount', 'create')
+            ->notEmptyString('fee_amount');
 
         $validator
             ->dateTime('violation_datetime')
@@ -73,5 +84,19 @@ class ViolationsTable extends Table
             ->notEmptyString('violation_description');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['user_id'], 'Users'));
+
+        return $rules;
     }
 }
