@@ -71,4 +71,25 @@
         </table>
         <?php endif; ?>
     </div>
+    <div class="related">
+        <h4><?= __('Related Files') ?></h4>
+        <?php if (!empty($violation->files)): ?>
+            <table cellpadding="0" cellspacing="0">
+                <tr>
+                    <th scope="col"><?= __('Image') ?></th>
+                </tr>
+                <?php foreach ($violation->files as $files): ?>
+                    <tr>
+                        <td>
+                            <?php
+                            echo $this->Html->image($files->path . $files->name, [
+                                "alt" => $files->name,
+                            ]);
+                            ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        <?php endif; ?>
+    </div>
 </div>

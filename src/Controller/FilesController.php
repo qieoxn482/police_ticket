@@ -143,7 +143,7 @@ class FilesController extends AppController
         }
         #officer
         elseif ($user['role_id'] === 2){
-            if (in_array($action, ['index', 'view', 'add', 'edit', 'delete'])){
+            if (in_array($action, ['index', 'view'])){
                 return true;
             }
         }

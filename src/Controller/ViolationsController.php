@@ -34,10 +34,14 @@ class ViolationsController extends AppController
      * @return \Cake\Http\Response|null
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
-    {
+    public function view($id = null){
+        //$violation = $this->Violations
+        //    ->contain('Users')
+        //    ->contain('Tickets')
+        //    ->contain('Files')
+         //   ->firstOrFail();
         $violation = $this->Violations->get($id, [
-            'contain' => ['Users', 'Tickets']
+            'contain' => ['Users', 'Tickets', 'Files']
         ]);
 
         $this->set('violation', $violation);
