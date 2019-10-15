@@ -32,6 +32,7 @@ class Violation extends Entity
         'violation_datetime' => true,
         'violation_description' => true,
         'user' => true,
-        'tickets' => true
+        'tickets' => true,
+        'files' => true
     ];
 }

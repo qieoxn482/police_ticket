@@ -18,12 +18,13 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('path') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('status') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                                <th scope="col"><?= __('Preview') ?></th>
+                                <!-- th scope="col"><!?= $this->Paginator->sort('name') ?></th -->
+                                <!-- th scope="col"><!?= $this->Paginator->sort('path') ?></th -->
+                                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                                <th scope="col"><?= $this->Paginator->sort('status') ?></th>
+                                <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -31,7 +32,16 @@
             <tr>
                 <td><?= $this->Number->format($file->id) ?></td>
                 <td><?= h($file->name) ?></td>
-                <td><?= h($file->path) ?></td>
+                <td>
+                    <?php
+                    echo $this->Html->image($file->path . $file->name, [
+                        "alt" => $file->name,
+                        "width" => "220px",
+                        "height" => "150px",
+                        'url' => ['action' => 'view', $file->id]
+                    ]);
+                    ?>
+                </td>
                 <td><?= h($file->created) ?></td>
                 <td><?= h($file->modified) ?></td>
                 <td><?= h($file->status) ?></td>
