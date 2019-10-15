@@ -34,6 +34,8 @@ class FilesViolationsTable extends Table
         parent::initialize($config);
 
         $this->setTable('files_violations');
+        $this->setDisplayField('id');
+        $this->setPrimaryKey('id');
 
         $this->belongsTo('Violations', [
             'foreignKey' => 'violation_id',
@@ -43,6 +45,21 @@ class FilesViolationsTable extends Table
             'foreignKey' => 'file_id',
             'joinType' => 'INNER'
         ]);
+    }
+
+    /**
+     * Default validation rules.
+     *
+     * @param \Cake\Validation\Validator $validator Validator instance.
+     * @return \Cake\Validation\Validator
+     */
+    public function validationDefault(Validator $validator)
+    {
+        $validator
+            ->integer('id')
+            ->allowEmptyString('id', null, 'create');
+
+        return $validator;
     }
 
     /**

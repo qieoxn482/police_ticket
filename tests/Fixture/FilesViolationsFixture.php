@@ -15,6 +15,7 @@ class FilesViolationsFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
+        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'violation_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'file_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
@@ -22,7 +23,7 @@ class FilesViolationsFixture extends TestFixture
             'file_id' => ['type' => 'index', 'columns' => ['file_id'], 'length' => []],
         ],
         '_constraints' => [
-            'files_violations_ibfk_1' => ['type' => 'foreign', 'columns' => ['violation_id'], 'references' => ['violations', 'id'], 'update' => 'cascade', 'delete' => 'cascade', 'length' => []],
+            'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -39,6 +40,7 @@ class FilesViolationsFixture extends TestFixture
     {
         $this->records = [
             [
+                'id' => 1,
                 'violation_id' => 1,
                 'file_id' => 1
             ],

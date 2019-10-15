@@ -6,6 +6,7 @@ use Cake\ORM\Entity;
 /**
  * FilesViolation Entity
  *
+ * @property int $id
  * @property int $violation_id
  * @property int $file_id
  *
