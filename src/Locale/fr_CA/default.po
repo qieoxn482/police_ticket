@@ -1,0 +1,627 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2019-10-15 16:46+0000\n"
+"PO-Revision-Date: 2019-10-15 13:27-0400\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Language: fr_CA\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: Controller/FilesController.php:54 Controller/FilesController.php:79
+msgid "The file has been saved."
+msgstr "Le fichier a ete sauvegarder"
+
+#: Controller/FilesController.php:58 Controller/FilesController.php:83
+msgid "The file could not be saved. Please, try again."
+msgstr "Le fichier n'a pas pu etre sauvegarder"
+
+#: Controller/FilesController.php:101
+msgid "The file has been deleted."
+msgstr "Le fichier a ete supprimer"
+
+#: Controller/FilesController.php:103
+msgid "The file could not be deleted. Please, try again."
+msgstr "Le fichier na pas pu etre supprimer. Veuillez reessayer."
+
+#: Controller/FilesViolationsController.php:57
+#: Controller/FilesViolationsController.php:83
+msgid "The files violation has been saved."
+msgstr "Le fichier de la violation a ete sauvegarder"
+
+#: Controller/FilesViolationsController.php:61
+#: Controller/FilesViolationsController.php:87
+msgid "The files violation could not be saved. Please, try again."
+msgstr "Le fichier de la violation na pas pu etre sauvegarder. Veuillez reessayer."
+
+#: Controller/FilesViolationsController.php:106
+msgid "The files violation has been deleted."
+msgstr "Le fichier de la violation a ete supprimer"
+
+#: Controller/FilesViolationsController.php:108
+msgid "The files violation could not be deleted. Please, try again."
+msgstr "Le fichier de la violation na pas pu etre supprimer. Veuillez reessayer."
+
+#: Controller/I18nController.php:54 Controller/I18nController.php:78
+msgid "The i18n has been saved."
+msgstr "Le i18n a ete sauvegarder."
+
+#: Controller/I18nController.php:58 Controller/I18nController.php:82
+msgid "The i18n could not be saved. Please, try again."
+msgstr "Le i18n n'a pas pu etre sauvegarder. Veuillez reessayer."
+
+#: Controller/I18nController.php:99
+msgid "The i18n has been deleted."
+msgstr "Le i18n a ete supprimer."
+
+#: Controller/I18nController.php:101
+msgid "The i18n could not be deleted. Please, try again."
+msgstr "Le i18n n'a pas pu etre supprimer. Veuillez reessayer."
+
+#: Controller/RolesController.php:54 Controller/RolesController.php:78
+msgid "The role has been saved."
+msgstr "Le role a ete sauvegarder."
+
+#: Controller/RolesController.php:58 Controller/RolesController.php:82
+msgid "The role could not be saved. Please, try again."
+msgstr "Le role n'a pas pu etre sauvegarder. Veuillez reessayer."
+
+#: Controller/RolesController.php:99
+msgid "The role has been deleted."
+msgstr "Le role n'a pas pu etre supprimer."
+
+#: Controller/RolesController.php:101
+msgid "The role could not be deleted. Please, try again."
+msgstr "Le role n'a pas pu etre supprimer. Veuillez reessayer."
+
+#: Controller/TicketsController.php:54 Controller/TicketsController.php:79
+msgid "The ticket has been saved."
+msgstr "La contravention a ete sauvegarder."
+
+#: Controller/TicketsController.php:58 Controller/TicketsController.php:83
+msgid "The ticket could not be saved. Please, try again."
+msgstr "La contravention n'a pas pu etre sauvegarder."
+
+#: Controller/TicketsController.php:101
+msgid "The ticket has been deleted."
+msgstr "La contravention a ete supprimer."
+
+#: Controller/TicketsController.php:103
+msgid "The ticket could not be deleted. Please, try again."
+msgstr "La contravention n'a pas pu etre supprimer. Veuillez reessayer."
+
+#: Controller/UsersController.php:57 Controller/UsersController.php:82
+msgid "The user has been saved."
+msgstr "L'utilisateur a ete sauvegarder."
+
+#: Controller/UsersController.php:61 Controller/UsersController.php:86
+msgid "The user could not be saved. Please, try again."
+msgstr "L'utilisateur n'a pas pu etre sauvegarder. Veuillez reessayer."
+
+#: Controller/UsersController.php:104
+msgid "The user has been deleted."
+msgstr "L'utilisateur a ete supprimer."
+
+#: Controller/UsersController.php:106
+msgid "The user could not be deleted. Please, try again."
+msgstr "L'utilisateur n'a pas pu etre supprimer. Veuillez reessayer."
+
+#: Controller/ViolationsController.php:57
+#: Controller/ViolationsController.php:83
+msgid "The violation has been saved."
+msgstr "La violation a ete sauvegarder."
+
+#: Controller/ViolationsController.php:61
+#: Controller/ViolationsController.php:87
+msgid "The violation could not be saved. Please, try again."
+msgstr "La violation n'a pas pu etre sauvegarder. Veuillez reessayer."
+
+#: Controller/ViolationsController.php:106
+msgid "The violation has been deleted."
+msgstr "La violation a ete supprimer."
+
+#: Controller/ViolationsController.php:108
+msgid "The violation could not be deleted. Please, try again."
+msgstr "La violation n'a pas pu etre supprimer. Veuillez reessayer."
+
+#: Controller/ViolationsTicketsController.php:57
+#: Controller/ViolationsTicketsController.php:83
+msgid "The violations ticket has been saved."
+msgstr "La violation contravention a ete sauvegarder."
+
+#: Controller/ViolationsTicketsController.php:61
+#: Controller/ViolationsTicketsController.php:87
+msgid "The violations ticket could not be saved. Please, try again."
+msgstr "La violation contravention n'a pas pu etre sauvegarder. Veuillez reessayer."
+
+#: Controller/ViolationsTicketsController.php:106
+msgid "The violations ticket has been deleted."
+msgstr "La violation contravention a ete supprimer."
+
+#: Controller/ViolationsTicketsController.php:108
+msgid "The violations ticket could not be deleted. Please, try again."
+msgstr "La violation contravention n'a pas pu etre supprimer. Veuillez reessayer."
+
+#: Template/Files/add.ctp:9 Template/Files/edit.ctp:9
+#: Template/Files/index.ctp:9 Template/Files/index.ctp:26
+#: Template/Files/view.ctp:9 Template/Files/view.ctp:56 Template/I18n/add.ctp:9
+#: Template/I18n/edit.ctp:9 Template/I18n/index.ctp:9
+#: Template/I18n/index.ctp:23 Template/I18n/view.ctp:9 Template/Roles/add.ctp:9
+#: Template/Roles/edit.ctp:9 Template/Roles/index.ctp:9
+#: Template/Roles/index.ctp:22 Template/Roles/view.ctp:9
+#: Template/Roles/view.ctp:43 Template/Tickets/add.ctp:9
+#: Template/Tickets/edit.ctp:9 Template/Tickets/index.ctp:9
+#: Template/Tickets/index.ctp:24 Template/Tickets/view.ctp:9
+#: Template/Tickets/view.ctp:48 Template/Users/add.ctp:9
+#: Template/Users/edit.ctp:9 Template/Users/index.ctp:9
+#: Template/Users/index.ctp:30 Template/Users/view.ctp:9
+#: Template/Users/view.ctp:67 Template/Violations/add.ctp:9
+#: Template/Violations/edit.ctp:9 Template/Violations/index.ctp:9
+#: Template/Violations/index.ctp:27 Template/Violations/view.ctp:9
+#: Template/Violations/view.ctp:53 Template/ViolationsTickets/add.ctp:9
+#: Template/ViolationsTickets/edit.ctp:9 Template/ViolationsTickets/index.ctp:9
+#: Template/ViolationsTickets/index.ctp:25
+#: Template/ViolationsTickets/view.ctp:9
+msgid "Actions"
+msgstr "Actions"
+
+#: Template/Files/add.ctp:10 Template/Files/edit.ctp:16
+#: Template/Files/view.ctp:12
+msgid "List Files"
+msgstr "Liste Fichiers"
+
+#: Template/Files/add.ctp:11 Template/Files/edit.ctp:17
+#: Template/Files/index.ctp:11 Template/Files/view.ctp:14
+#: Template/Tickets/add.ctp:11 Template/Tickets/edit.ctp:17
+#: Template/Tickets/index.ctp:11 Template/Tickets/view.ctp:14
+#: Template/Users/add.ctp:13 Template/Users/edit.ctp:19
+#: Template/Users/index.ctp:13 Template/Users/view.ctp:16
+#: Template/Violations/add.ctp:10 Template/Violations/edit.ctp:16
+#: Template/Violations/view.ctp:12 Template/ViolationsTickets/add.ctp:13
+#: Template/ViolationsTickets/edit.ctp:19
+#: Template/ViolationsTickets/index.ctp:13
+#: Template/ViolationsTickets/view.ctp:16
+msgid "List Violations"
+msgstr "Liste Violations"
+
+#: Template/Files/add.ctp:12 Template/Files/edit.ctp:18
+#: Template/Files/index.ctp:12 Template/Files/view.ctp:15
+#: Template/Tickets/add.ctp:12 Template/Tickets/edit.ctp:18
+#: Template/Tickets/index.ctp:12 Template/Tickets/view.ctp:15
+#: Template/Users/add.ctp:14 Template/Users/edit.ctp:20
+#: Template/Users/index.ctp:14 Template/Users/view.ctp:17
+#: Template/Violations/index.ctp:10 Template/Violations/view.ctp:13
+#: Template/ViolationsTickets/add.ctp:14 Template/ViolationsTickets/edit.ctp:20
+#: Template/ViolationsTickets/index.ctp:14
+#: Template/ViolationsTickets/view.ctp:17
+msgid "New Violation"
+msgstr "Nouvelle Violation"
+
+#: Template/Files/add.ctp:18
+msgid "Add File"
+msgstr "Ajouter Fichier"
+
+#: Template/Files/add.ctp:26 Template/Files/edit.ctp:32
+#: Template/I18n/add.ctp:25 Template/I18n/edit.ctp:31 Template/Roles/add.ctp:23
+#: Template/Roles/edit.ctp:29 Template/Tickets/add.ctp:26
+#: Template/Tickets/edit.ctp:32 Template/Users/add.ctp:29
+#: Template/Users/edit.ctp:35 Template/Violations/add.ctp:29
+#: Template/Violations/edit.ctp:35 Template/ViolationsTickets/add.ctp:26
+#: Template/ViolationsTickets/edit.ctp:32
+msgid "Submit"
+msgstr "Soumetre"
+
+#: Template/Files/edit.ctp:11 Template/Files/index.ctp:41
+#: Template/Files/view.ctp:68 Template/I18n/edit.ctp:11
+#: Template/I18n/index.ctp:37 Template/Roles/edit.ctp:11
+#: Template/Roles/index.ctp:33 Template/Roles/view.ctp:58
+#: Template/Tickets/edit.ctp:11 Template/Tickets/index.ctp:37
+#: Template/Tickets/view.ctp:60 Template/Users/edit.ctp:11
+#: Template/Users/index.ctp:47 Template/Users/view.ctp:79
+#: Template/Violations/edit.ctp:11 Template/Violations/index.ctp:41
+#: Template/Violations/view.ctp:64 Template/ViolationsTickets/edit.ctp:11
+#: Template/ViolationsTickets/index.ctp:37
+msgid "Delete"
+msgstr "Supprimer"
+
+#: Template/Files/edit.ctp:13 Template/Files/index.ctp:41
+#: Template/Files/view.ctp:11 Template/Files/view.ctp:68
+#: Template/I18n/edit.ctp:13 Template/I18n/index.ctp:37
+#: Template/I18n/view.ctp:11 Template/Roles/edit.ctp:13
+#: Template/Roles/index.ctp:33 Template/Roles/view.ctp:11
+#: Template/Roles/view.ctp:58 Template/Tickets/edit.ctp:13
+#: Template/Tickets/index.ctp:37 Template/Tickets/view.ctp:11
+#: Template/Tickets/view.ctp:60 Template/Users/edit.ctp:13
+#: Template/Users/index.ctp:47 Template/Users/view.ctp:11
+#: Template/Users/view.ctp:79 Template/Violations/edit.ctp:13
+#: Template/Violations/index.ctp:41 Template/Violations/view.ctp:11
+#: Template/Violations/view.ctp:64 Template/ViolationsTickets/edit.ctp:13
+#: Template/ViolationsTickets/index.ctp:37
+#: Template/ViolationsTickets/view.ctp:11
+msgid "Are you sure you want to delete # {0}?"
+msgstr "Voulez-vous vraiment supprimer  # {0}?"
+
+#: Template/Files/edit.ctp:24 Template/Files/view.ctp:10
+msgid "Edit File"
+msgstr "Modifier Fichier"
+
+#: Template/Files/index.ctp:10 Template/Files/view.ctp:13
+msgid "New File"
+msgstr "Nouveau Fichier"
+
+#: Template/Files/index.ctp:16
+msgid "Files"
+msgstr "Fichier"
+
+#: Template/Files/index.ctp:39 Template/Files/view.ctp:66
+#: Template/I18n/index.ctp:35 Template/Roles/index.ctp:31
+#: Template/Roles/view.ctp:56 Template/Tickets/index.ctp:35
+#: Template/Tickets/view.ctp:58 Template/Users/index.ctp:45
+#: Template/Users/view.ctp:77 Template/Violations/index.ctp:39
+#: Template/Violations/view.ctp:62 Template/ViolationsTickets/index.ctp:35
+msgid "View"
+msgstr "Vue"
+
+#: Template/Files/index.ctp:40 Template/Files/view.ctp:67
+#: Template/I18n/index.ctp:36 Template/Roles/index.ctp:32
+#: Template/Roles/view.ctp:57 Template/Tickets/index.ctp:36
+#: Template/Tickets/view.ctp:59 Template/Users/index.ctp:46
+#: Template/Users/view.ctp:78 Template/Violations/index.ctp:40
+#: Template/Violations/view.ctp:63 Template/ViolationsTickets/index.ctp:36
+msgid "Edit"
+msgstr "Modifier"
+
+#: Template/Files/index.ctp:49 Template/I18n/index.ctp:45
+#: Template/Roles/index.ctp:41 Template/Tickets/index.ctp:45
+#: Template/Users/index.ctp:55 Template/Violations/index.ctp:49
+#: Template/ViolationsTickets/index.ctp:45
+msgid "first"
+msgstr "Premier"
+
+#: Template/Files/index.ctp:50 Template/I18n/index.ctp:46
+#: Template/Roles/index.ctp:42 Template/Tickets/index.ctp:46
+#: Template/Users/index.ctp:56 Template/Violations/index.ctp:50
+#: Template/ViolationsTickets/index.ctp:46
+msgid "previous"
+msgstr "Precedent"
+
+#: Template/Files/index.ctp:52 Template/I18n/index.ctp:48
+#: Template/Roles/index.ctp:44 Template/Tickets/index.ctp:48
+#: Template/Users/index.ctp:58 Template/Violations/index.ctp:52
+#: Template/ViolationsTickets/index.ctp:48
+msgid "next"
+msgstr "Prochain"
+
+#: Template/Files/index.ctp:53 Template/I18n/index.ctp:49
+#: Template/Roles/index.ctp:45 Template/Tickets/index.ctp:49
+#: Template/Users/index.ctp:59 Template/Violations/index.ctp:53
+#: Template/ViolationsTickets/index.ctp:49
+msgid "last"
+msgstr "Dernier"
+
+#: Template/Files/index.ctp:55 Template/I18n/index.ctp:51
+#: Template/Roles/index.ctp:47 Template/Tickets/index.ctp:51
+#: Template/Users/index.ctp:61 Template/Violations/index.ctp:55
+#: Template/ViolationsTickets/index.ctp:51
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr "Page {{page}} de {{pages}}, affiche {{current}} enregistrement(s) de {{count}} au total"
+
+#: Template/Files/view.ctp:11
+msgid "Delete File"
+msgstr "Supprimer Fichier"
+
+#: Template/Files/view.ctp:22 Template/Roles/view.ctp:22
+#: Template/Roles/view.ctp:37 Template/Users/view.ctp:28
+msgid "Name"
+msgstr "Nom"
+
+#: Template/Files/view.ctp:26
+msgid "Path"
+msgstr "Chemin"
+
+#: Template/Files/view.ctp:30 Template/Files/view.ctp:51
+#: Template/I18n/view.ctp:32 Template/Roles/view.ctp:26
+#: Template/Roles/view.ctp:35 Template/Tickets/view.ctp:26
+#: Template/Tickets/view.ctp:43 Template/Users/view.ctp:45
+#: Template/Users/view.ctp:62 Template/Violations/view.ctp:36
+#: Template/Violations/view.ctp:49 Template/ViolationsTickets/view.ctp:32
+msgid "Id"
+msgstr "Id"
+
+#: Template/Files/view.ctp:34 Template/Roles/view.ctp:41
+#: Template/Users/view.ctp:49
+msgid "Created"
+msgstr "Crée"
+
+#: Template/Files/view.ctp:38 Template/Roles/view.ctp:42
+#: Template/Users/view.ctp:53
+msgid "Modified"
+msgstr "Modifiée"
+
+#: Template/Files/view.ctp:42
+msgid "Status"
+msgstr "Statue"
+
+#: Template/Files/view.ctp:43
+msgid "Yes"
+msgstr "Oui"
+
+#: Template/Files/view.ctp:43
+msgid "No"
+msgstr "Non"
+
+#: Template/Files/view.ctp:47 Template/Tickets/view.ctp:39
+#: Template/Users/view.ctp:58
+msgid "Related Violations"
+msgstr "Violations Reliée"
+
+#: Template/Files/view.ctp:52 Template/Tickets/view.ctp:44
+#: Template/Users/view.ctp:63
+msgid "User Id"
+msgstr "Id Utilisateur"
+
+#: Template/Files/view.ctp:53 Template/Tickets/view.ctp:45
+#: Template/Users/view.ctp:64 Template/Violations/view.ctp:28
+msgid "Fee Amount"
+msgstr "Montant de Frais"
+
+#: Template/Files/view.ctp:54 Template/Tickets/view.ctp:46
+#: Template/Users/view.ctp:65 Template/Violations/view.ctp:40
+msgid "Violation Datetime"
+msgstr "Violation Date"
+
+#: Template/Files/view.ctp:55 Template/Tickets/view.ctp:47
+#: Template/Users/view.ctp:66 Template/Violations/view.ctp:32
+msgid "Violation Description"
+msgstr "Violation Description"
+
+#: Template/I18n/add.ctp:10 Template/I18n/edit.ctp:16 Template/I18n/view.ctp:12
+msgid "List I18n"
+msgstr "Liste I18n"
+
+#: Template/I18n/add.ctp:16
+msgid "Add I18n"
+msgstr "Ajout I18n"
+
+#: Template/I18n/edit.ctp:22 Template/I18n/view.ctp:10
+msgid "Edit I18n"
+msgstr "Modifier I18n"
+
+#: Template/I18n/index.ctp:10 Template/I18n/view.ctp:13
+msgid "New I18n"
+msgstr "Nouveau I18n"
+
+#: Template/I18n/index.ctp:14
+msgid "I18n"
+msgstr "I18n"
+
+#: Template/I18n/view.ctp:11
+msgid "Delete I18n"
+msgstr "Supprimer I18n"
+
+#: Template/I18n/view.ctp:20
+msgid "Locale"
+msgstr "Locale"
+
+#: Template/I18n/view.ctp:24
+msgid "Model"
+msgstr "Modèle"
+
+#: Template/I18n/view.ctp:28
+msgid "Field"
+msgstr "Champs"
+
+#: Template/I18n/view.ctp:36
+msgid "Foreign Key"
+msgstr "Clé Étrangère"
+
+#: Template/I18n/view.ctp:41
+msgid "Content"
+msgstr "Contenu"
+
+#: Template/Layout/error.ctp:35
+msgid "Error"
+msgstr "Erreur"
+
+#: Template/Layout/error.ctp:43
+msgid "Back"
+msgstr "Retour"
+
+#: Template/Roles/add.ctp:10 Template/Roles/edit.ctp:16
+#: Template/Roles/view.ctp:12 Template/Users/add.ctp:11
+#: Template/Users/edit.ctp:17 Template/Users/index.ctp:11
+#: Template/Users/view.ctp:14
+msgid "List Roles"
+msgstr "Liste de Roles"
+
+#: Template/Roles/add.ctp:11 Template/Roles/edit.ctp:17
+#: Template/Roles/index.ctp:11 Template/Roles/view.ctp:14
+#: Template/Users/add.ctp:10 Template/Users/edit.ctp:16
+#: Template/Users/view.ctp:12 Template/Violations/add.ctp:11
+#: Template/Violations/edit.ctp:17 Template/Violations/index.ctp:11
+#: Template/Violations/view.ctp:14
+msgid "List Users"
+msgstr "Liste d'utilisateurs"
+
+#: Template/Roles/add.ctp:12 Template/Roles/edit.ctp:18
+#: Template/Roles/index.ctp:12 Template/Roles/view.ctp:15
+#: Template/Users/index.ctp:10 Template/Users/view.ctp:13
+#: Template/Violations/add.ctp:12 Template/Violations/edit.ctp:18
+#: Template/Violations/index.ctp:12 Template/Violations/view.ctp:15
+msgid "New User"
+msgstr "Nouvelle Utilisateur"
+
+#: Template/Roles/add.ctp:18
+msgid "Add Role"
+msgstr "Ajour Role"
+
+#: Template/Roles/edit.ctp:24 Template/Roles/view.ctp:10
+msgid "Edit Role"
+msgstr "Modifier Roles"
+
+#: Template/Roles/index.ctp:10 Template/Roles/view.ctp:13
+#: Template/Users/add.ctp:12 Template/Users/edit.ctp:18
+#: Template/Users/index.ctp:12 Template/Users/view.ctp:15
+msgid "New Role"
+msgstr "Nouveau Role"
+
+#: Template/Roles/index.ctp:16
+msgid "Roles"
+msgstr "Roles"
+
+#: Template/Roles/view.ctp:11
+msgid "Delete Role"
+msgstr "Supprimer Role"
+
+#: Template/Roles/view.ctp:31
+msgid "Related Users"
+msgstr "Utilisateurs Reliés"
+
+#: Template/Roles/view.ctp:36
+msgid "Role Id"
+msgstr "Role Id"
+
+#: Template/Roles/view.ctp:38 Template/Users/view.ctp:32
+msgid "Phone"
+msgstr "Téléphone"
+
+#: Template/Roles/view.ctp:39 Template/Users/view.ctp:36
+msgid "Email"
+msgstr "Courriel"
+
+#: Template/Roles/view.ctp:40 Template/Users/view.ctp:40
+msgid "Password"
+msgstr "Mot de Passe"
+
+#: Template/Tickets/add.ctp:10 Template/Tickets/edit.ctp:16
+#: Template/Tickets/view.ctp:12 Template/Violations/add.ctp:13
+#: Template/Violations/edit.ctp:19 Template/Violations/index.ctp:13
+#: Template/Violations/view.ctp:16 Template/ViolationsTickets/add.ctp:11
+#: Template/ViolationsTickets/edit.ctp:17
+#: Template/ViolationsTickets/index.ctp:11
+#: Template/ViolationsTickets/view.ctp:14
+msgid "List Tickets"
+msgstr "Liste de Contraventions"
+
+#: Template/Tickets/add.ctp:18
+msgid "Add Ticket"
+msgstr "Ajout de contravention"
+
+#: Template/Tickets/edit.ctp:24 Template/Tickets/view.ctp:10
+msgid "Edit Ticket"
+msgstr "Modifier contravention"
+
+#: Template/Tickets/index.ctp:10 Template/Tickets/view.ctp:13
+#: Template/Violations/add.ctp:14 Template/Violations/edit.ctp:20
+#: Template/Violations/index.ctp:14 Template/Violations/view.ctp:17
+#: Template/ViolationsTickets/add.ctp:12 Template/ViolationsTickets/edit.ctp:18
+#: Template/ViolationsTickets/index.ctp:12
+#: Template/ViolationsTickets/view.ctp:15
+msgid "New Ticket"
+msgstr "Nouvelle contravention"
+
+#: Template/Tickets/index.ctp:16
+msgid "Tickets"
+msgstr "Contraventions"
+
+#: Template/Tickets/view.ctp:11
+msgid "Delete Ticket"
+msgstr "Supprimer Contravention"
+
+#: Template/Tickets/view.ctp:22 Template/Violations/view.ctp:50
+msgid "Licence Plate"
+msgstr "Plaque d'immatriculation"
+
+#: Template/Tickets/view.ctp:30 Template/Violations/view.ctp:51
+msgid "Datetime Issued"
+msgstr "Date"
+
+#: Template/Tickets/view.ctp:34 Template/Violations/view.ctp:52
+msgid "Datetime Paid"
+msgstr "Date Payée"
+
+#: Template/Users/add.ctp:20
+msgid "Add User"
+msgstr "Ajout Utilisateur"
+
+#: Template/Users/edit.ctp:26 Template/Users/view.ctp:10
+msgid "Edit User"
+msgstr "Modifier Utilisateur"
+
+#: Template/Users/index.ctp:18
+msgid "Users"
+msgstr "Utilisateurs"
+
+#: Template/Users/view.ctp:11
+msgid "Delete User"
+msgstr "Supprimer Utilisateur"
+
+#: Template/Users/view.ctp:24
+msgid "Role"
+msgstr "Role"
+
+#: Template/Violations/add.ctp:20
+msgid "Add Violation"
+msgstr "Ajout de la violation"
+
+#: Template/Violations/edit.ctp:26 Template/Violations/view.ctp:10
+msgid "Edit Violation"
+msgstr "Modifier Violation"
+
+#: Template/Violations/index.ctp:18
+msgid "Violations"
+msgstr "Violations"
+
+#: Template/Violations/view.ctp:11
+msgid "Delete Violation"
+msgstr "Supprimer Violation"
+
+#: Template/Violations/view.ctp:24
+msgid "Created by User"
+msgstr "Crée par l'utilisateur"
+
+#: Template/Violations/view.ctp:45
+msgid "Related Tickets"
+msgstr "Contravention Reliée"
+
+#: Template/ViolationsTickets/add.ctp:10 Template/ViolationsTickets/edit.ctp:16
+#: Template/ViolationsTickets/view.ctp:12
+msgid "List Violations Tickets"
+msgstr "Liste Violation Contravention"
+
+#: Template/ViolationsTickets/add.ctp:20
+msgid "Add Violations Ticket"
+msgstr "Ajout Violations Contravention "
+
+#: Template/ViolationsTickets/edit.ctp:26
+#: Template/ViolationsTickets/view.ctp:10
+msgid "Edit Violations Ticket"
+msgstr "Modifier Violations Contravention"
+
+#: Template/ViolationsTickets/index.ctp:10
+#: Template/ViolationsTickets/view.ctp:13
+msgid "New Violations Ticket"
+msgstr "Nouvelle Violations Contravention"
+
+#: Template/ViolationsTickets/index.ctp:18
+msgid "Violations Tickets"
+msgstr "Violations Contravention"
+
+#: Template/ViolationsTickets/view.ctp:11
+msgid "Delete Violations Ticket"
+msgstr "Supprimer Violations Contravention"
+
+#: Template/ViolationsTickets/view.ctp:24
+msgid "Ticket"
+msgstr "Contravention"
+
+#: Template/ViolationsTickets/view.ctp:28
+msgid "Violation"
+msgstr "Violation"

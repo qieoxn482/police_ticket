@@ -51,12 +51,23 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         echo $this->Html->link('login', ['controller' => 'Users', 'action' => 'login']);
                     }
                     ?></li>
+
                 <li><?= $this->Html->link('Info', ['controller' => 'Users', 'action' => 'view', $loguser['id']]);?></li>
                 <li>
                     <?= $this->Html-> link('About', ['controller' => 'about', 'action' => 'index']); ?>
                 </li>
                 <li>
                     <?= $this->Html-> link('Home', ['controller' => 'violations', 'action' => 'index']); ?>
+                </li>
+                <li>
+                    <?= $this->Html->link('Français', ['action' => 'changeLang', 'fr_CA'], ['escape' => false]) ?>
+                </li>
+
+                <li>
+                    <?= $this->Html->link('English', ['action' => 'changeLang', 'en_US'], ['escape' => false]) ?>
+                </li>
+                <li>
+                    <?= $this->Html->link('Portugese', ['action' => 'changeLang', 'pt_BR'], ['escape' => false]) ?>
                 </li>
             </ul>
         </div>
