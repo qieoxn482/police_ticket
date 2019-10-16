@@ -32,6 +32,7 @@ class ViolationsTable extends Table
      */
     public function initialize(array $config)
     {
+        $this->addBehavior('Translate', ['fields' => ['title']]);
         parent::initialize($config);
 
         $this->setTable('violations');
