@@ -18,13 +18,13 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                                <th scope="col"><?= __('Preview') ?></th>
-                                <!-- th scope="col"><!?= $this->Paginator->sort('name') ?></th -->
-                                <!-- th scope="col"><!?= $this->Paginator->sort('path') ?></th -->
-                                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('status') ?></th>
-                                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                <th scope="col"><?= __('Preview') ?></th>
+                <!-- th scope="col"><!?= $this->Paginator->sort('name') ?></th -->
+                <!-- th scope="col"><!?= $this->Paginator->sort('path') ?></th -->
+                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('status') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>

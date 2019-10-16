@@ -26,7 +26,7 @@
             echo $this->Form->control('violation_datetime');
             echo $this->Form->control('violation_description');
             echo $this->Form->control('tickets._ids', ['options' => $tickets]);
-            //echo $this->Form->control('files._ids', ['options' => $files]);
+            echo $this->Form->control('files._ids', ['options' => $files]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

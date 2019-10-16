@@ -16,7 +16,7 @@
     </ul>
 </nav>
 <div class="tickets view large-9 medium-8 columns content">
-    <h3><?= h($ticket->id) ?></h3>
+    <h3><?= h($ticket->licence_plate) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Licence Plate') ?></th>

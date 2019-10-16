@@ -66,7 +66,8 @@ class ViolationsController extends AppController
         }
         $users = $this->Violations->Users->find('list', ['limit' => 200]);
         $tickets = $this->Violations->Tickets->find('list', ['limit' => 200]);
-        $this->set(compact('violation', 'users', 'tickets'));
+        $files = $this->Violations->Files->find('list', ['limit' => 200]);
+        $this->set(compact('violation', 'users', 'tickets', 'files'));
     }
 
     /**
@@ -92,7 +93,9 @@ class ViolationsController extends AppController
         }
         $users = $this->Violations->Users->find('list', ['limit' => 200]);
         $tickets = $this->Violations->Tickets->find('list', ['limit' => 200]);
-        $this->set(compact('violation', 'users', 'tickets'));
+        $files = $this->Violations->Files->find('list', ['limit' => 200]);
+        $this->set(compact('violation', 'users', 'tickets', 'files'));
+
     }
 
     /**

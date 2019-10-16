@@ -21,7 +21,7 @@
     </ul>
 </nav>
 <div class="violations view large-9 medium-8 columns content">
-    <h3><?= h($violation->id) ?></h3>
+    <h3><?= h($violation->violation_description) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Created by User') ?></th>
