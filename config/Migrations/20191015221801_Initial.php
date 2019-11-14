@@ -112,7 +112,8 @@ class Initial extends AbstractMigration
             ])
             ->create();
 
-        $this->table('users')
+        $this->table('users', ['id' => false, 'primary_key' => ['id']])
+            ->addColumn('id', 'uuid')
             ->addColumn('role_id', 'integer', [
                 'default' => null,
                 'limit' => 11,
