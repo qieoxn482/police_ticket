@@ -6,6 +6,14 @@ class Initial extends AbstractMigration
     public function up()
     {
 
+        $this->table('categories')
+            ->addColumn('name', 'string', [
+                'default' => null,
+                'limit' => 255,
+                'null' => false,
+            ])
+            ->create();
+
         $this->table('files')
             ->addColumn('name', 'string', [
                 'default' => null,
@@ -58,6 +66,46 @@ class Initial extends AbstractMigration
             )
             ->create();
 
+        $this->table('groups')
+            ->addColumn('categories_id', 'integer', [
+                'default' => null,
+                'limit' => 11,
+                'null' => false,
+            ])
+            ->addColumn('subcategories_id', 'integer', [
+                'default' => null,
+                'limit' => 11,
+                'null' => false,
+            ])
+            ->addColumn('name', 'string', [
+                'default' => null,
+                'limit' => 255,
+                'null' => false,
+            ])
+            ->addIndex(
+                [
+                    'categories_id',
+                ]
+            )
+            ->addIndex(
+                [
+                    'subcategories_id',
+                ]
+            )
+            ->addIndex(
+                [
+                    'categories_id',
+                    'subcategories_id',
+                ]
+            )
+            ->addIndex(
+                [
+                    'categories_id',
+                    'subcategories_id',
+                ]
+            )
+            ->create();
+
         $this->table('i18n')
             ->addColumn('locale', 'string', [
                 'default' => null,
@@ -86,12 +134,38 @@ class Initial extends AbstractMigration
             ])
             ->create();
 
+        $this->table('jurisdictions')
+            ->addColumn('location', 'string', [
+                'default' => null,
+                'limit' => 255,
+                'null' => false,
+            ])
+            ->create();
+
         $this->table('roles')
             ->addColumn('name', 'string', [
                 'default' => null,
                 'limit' => 255,
                 'null' => false,
             ])
+            ->create();
+
+        $this->table('subcategories')
+            ->addColumn('category_id', 'integer', [
+                'default' => null,
+                'limit' => 11,
+                'null' => false,
+            ])
+            ->addColumn('name', 'string', [
+                'default' => null,
+                'limit' => 255,
+                'null' => false,
+            ])
+            ->addIndex(
+                [
+                    'category_id',
+                ]
+            )
             ->create();
 
         $this->table('tickets')
@@ -101,7 +175,7 @@ class Initial extends AbstractMigration
                 'null' => false,
             ])
             ->addColumn('datetime_issued', 'datetime', [
-                'default' => 'CURRENT_TIMESTAMP',
+                'default' => 'current_timestamp()',
                 'limit' => null,
                 'null' => false,
             ])
@@ -112,8 +186,7 @@ class Initial extends AbstractMigration
             ])
             ->create();
 
-        $this->table('users', ['id' => false, 'primary_key' => ['id']])
-            ->addColumn('id', 'uuid')
+        $this->table('users')
             ->addColumn('role_id', 'integer', [
                 'default' => null,
                 'limit' => 11,
@@ -207,6 +280,39 @@ class Initial extends AbstractMigration
             )
             ->create();
 
+        $this->table('groups')
+            ->addForeignKey(
+                'categories_id',
+                'categories',
+                'id',
+                [
+                    'update' => 'CASCADE',
+                    'delete' => 'CASCADE'
+                ]
+            )
+            ->addForeignKey(
+                'subcategories_id',
+                'subcategories',
+                'id',
+                [
+                    'update' => 'CASCADE',
+                    'delete' => 'CASCADE'
+                ]
+            )
+            ->update();
+
+        $this->table('subcategories')
+            ->addForeignKey(
+                'category_id',
+                'categories',
+                'id',
+                [
+                    'update' => 'CASCADE',
+                    'delete' => 'CASCADE'
+                ]
+            )
+            ->update();
+
         $this->table('users')
             ->addForeignKey(
                 'role_id',
@@ -255,6 +361,19 @@ class Initial extends AbstractMigration
 
     public function down()
     {
+        $this->table('groups')
+            ->dropForeignKey(
+                'categories_id'
+            )
+            ->dropForeignKey(
+                'subcategories_id'
+            )->save();
+
+        $this->table('subcategories')
+            ->dropForeignKey(
+                'category_id'
+            )->save();
+
         $this->table('users')
             ->dropForeignKey(
                 'role_id'
@@ -273,10 +392,14 @@ class Initial extends AbstractMigration
                 'violation_id'
             )->save();
 
+        $this->table('categories')->drop()->save();
         $this->table('files')->drop()->save();
         $this->table('files_violations')->drop()->save();
+        $this->table('groups')->drop()->save();
         $this->table('i18n')->drop()->save();
+        $this->table('jurisdictions')->drop()->save();
         $this->table('roles')->drop()->save();
+        $this->table('subcategories')->drop()->save();
         $this->table('tickets')->drop()->save();
         $this->table('users')->drop()->save();
         $this->table('violations')->drop()->save();

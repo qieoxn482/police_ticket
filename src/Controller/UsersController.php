@@ -12,6 +12,33 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
+    public function initialize() {
+        parent::initialize();
+        $this->Auth->allow(['logout']);
+        $this->Auth->allow(['autocompletedemo', 'findUsers', 'add', 'edit', 'delete']);
+    }
+
+    public function findUsers() {
+
+        if ($this->request->is('ajax')) {
+
+            $this->autoRender = false;
+            $name = $this->request->query['term'];
+            $results = $this->Users->find('all', array(
+                'conditions' => array('Users.name LIKE ' => '%' . $name . '%')
+            ));
+
+            $resultArr = array();
+            foreach ($results as $result) {
+                $resultArr[] = array('label' => $result['name'], 'value' => $result['name']);
+            }
+            echo json_encode($resultArr);
+        }
+    }
+
+    public function autocompletedemo() {
+        
+    }
     /**
      * Index method
      *
@@ -119,12 +146,6 @@ class UsersController extends AppController
             }
             $this->Flash->error('Votre identifiant ou votre mot de passe est incorrect.');
         }
-    }
-
-    public function initialize()
-    {
-        parent::initialize();
-        $this->Auth->allow(['logout']);
     }
 
     public function logout()

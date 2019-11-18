@@ -39,6 +39,7 @@
                 <td><?= h($violation->violation_description) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $violation->id]) ?>
+                    <?= $this->Html->link('(pdf)', ['action' => 'view', $violation->id . '.pdf']) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $violation->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $violation->id], ['confirm' => __('Are you sure you want to delete # {0}?', $violation->id)]) ?>
                 </td>

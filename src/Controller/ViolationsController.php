@@ -25,6 +25,7 @@ class ViolationsController extends AppController
         $violations = $this->paginate($this->Violations);
 
         $this->set(compact('violations'));
+        $this->set('_serialize', ['violation']);
     }
 
     /**
@@ -45,6 +46,7 @@ class ViolationsController extends AppController
         ]);
 
         $this->set('violation', $violation);
+        $this->set('_serialize', ['violation']);
     }
 
     /**
@@ -122,6 +124,7 @@ class ViolationsController extends AppController
     {
         parent::initialize();
         $this->Auth->allow(['logout']);
+        $this->loadComponent('RequestHandler');
     }
 
     public function isAuthorized($user)

@@ -1,4 +1,14 @@
 <?php
+$urlToUsersAutocompletedemoJson = $this->Url->build([
+    "controller" => "Users",
+    "action" => "findUsers",
+    "_ext" => "json"
+        ]);
+echo $this->Html->scriptBlock('var urlToAutocompleteAction = "' . $urlToUsersAutocompletedemoJson . '";', ['block' => true]);
+echo $this->Html->script('Users/autocompletedemo', ['block' => 'scriptBottom']);
+?>
+
+<?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\User $user
@@ -20,7 +30,7 @@
         <legend><?= __('Add User') ?></legend>
         <?php
             echo $this->Form->control('role_id', ['options' => $roles]);
-            echo $this->Form->control('name');
+            echo $this->Form->control('name', ['id' => 'autocomplete']);
             echo $this->Form->control('phone');
             echo $this->Form->control('email');
             echo $this->Form->control('password');
