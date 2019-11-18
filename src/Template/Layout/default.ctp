@@ -73,6 +73,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     <?= $this->Html-> link('About', ['controller' => 'about', 'action' => 'index']); ?>
                 </li>
                 <li>
+                    <?= $this->Html-> link('Jurisdictions (AJAX)', ['controller' => 'jurisdictions', 'action' => 'index']); ?>
+                </li>
+                <li>
                     <?= $this->Html-> link('Home', ['controller' => 'violations', 'action' => 'index']); ?>
                 </li>
                 <li>
@@ -96,6 +99,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </footer>
     <?= $this->fetch('scriptLibraries') ?>
         <?= $this->fetch('script'); ?>
-        <?= $this->fetch('scriptBottom') ?> 
+        <?= $this->fetch('scriptBottom') ?>
 </body>
 </html>

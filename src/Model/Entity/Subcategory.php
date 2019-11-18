@@ -28,6 +28,6 @@ class Subcategory extends Entity
         'category_id' => true,
         'name' => true,
         'category' => true,
-        'types' => true
+        'groups' => true
     ];
 }

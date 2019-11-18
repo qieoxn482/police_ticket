@@ -60,7 +60,7 @@ class GroupsController extends AppController
             }
             $this->Flash->error(__('The group could not be saved. Please, try again.'));
         }
-       // Bâtir la liste des catégories  
+       // Bâtir la liste des catégories
        $this->loadModel('Categories');
        $categories = $this->Categories->find('list', ['limit' => 200]);
 
@@ -120,5 +120,34 @@ class GroupsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function isAuthorized($user)
+    {
+        $action = $this->request->getParam('action');
+        $param = $this->request->getParam('pass.0');
+
+        #admin
+        if($user['role_id'] === 1){
+            if (in_array($action, ['index', 'view','add','edit','delete'])){
+                return true;
+            }
+        }
+
+        #chief
+        elseif ($user['role_id'] === 3){
+            if (in_array($action, ['index', 'view','add','edit','delete'])){
+                return true;
+            }
+        }
+        #officer
+        elseif ($user['role_id'] === 2){
+            if (in_array($action, ['index', 'view'])){
+                return true;
+            }
+        }
+        else {
+            return false;
+        }
     }
 }

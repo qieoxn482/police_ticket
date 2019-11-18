@@ -26,6 +26,6 @@ class Category extends Entity
     protected $_accessible = [
         'name' => true,
         'subcategories' => true,
-        'types' => true
+        'groups' => true
     ];
 }

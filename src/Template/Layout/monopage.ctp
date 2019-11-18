@@ -64,6 +64,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     ]);
                     ?>
                 </li>
+                <li>
+                    <?= $this->Html-> link('Home', ['controller' => 'violations', 'action' => 'index']); ?>
+                </li>
             </ul>
         </div>
     </nav>
@@ -75,6 +78,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </footer>
     <?= $this->fetch('scriptLibraries') ?>
     <?= $this->fetch('script'); ?>
-    <?= $this->fetch('scriptBottom') ?> 
+    <?= $this->fetch('scriptBottom') ?>
 </body>
 </html>

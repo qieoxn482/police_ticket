@@ -20,14 +20,39 @@
 
             2. Il peut créer une contravention contre un citoyen qui n'a pas respecté la loi. <br>
             [Cliquer sur voir la liste des tickets!] <br>
-            [Cliquer sur ajouter ticket pour la creer!] <br>
+            [Cliquer sur ajouter ticket pour la creer!] <br><br><br>
         </p>
 
-        <img src="webroot\bd.png"  width="1000" height="1000"> <br>
-        <a href="http://www.databaseanswers.org/data_models/traffic_cops_and_tickets/index.htm">Lien vers la base de données original!</a></b>
-        <br>
-        <br>
-        <br>
+        <h3><b>Mis a jour TP2:</b></h3>
 
-        </body>
+        <p>
+            <b>L'application a desormais des nouvelles fonctionnalites, ont peu desormais ajouter des secteurs de<br>
+                jurisdictions pour votre departement de police!<br>
+                [Cliquer sur Jurisdictions(AJAX) sur la barre de menu]<br>
+                [Cliquer sur ajouter pour ajouter un nouveau secteur de jurisdiction]
+                [Cliquer sur voir, modifier ou effacer pour utiliser un secteur de jurisdiction existant]<br><br><br>
+            </b>
+        </p>
+
+        <p>
+            <b>L'application a aussi des listes liees lorsqu'on ajoute un nouveau groupe!<br>
+                [Cliquer sur New Group]<br>
+                [Choisir une option sur les deux listes deroulantes.]<br><br><br>
+            </b>
+        </p>
+
+        <p>
+            <b>L'application a aussi l'autocomplete!<br>
+                [Cliquer sur New User]<br>
+                [Remplisser la case Name du nouvel utilisateur]<br><br><br>
+            </b>
+        </p>
+
+
+        <h3><b>Mis a jour de la BD (TP2):</b></h3>
+        <img src="webroot\bd.png"  width="1000" height="1000"> <br>
+        <b><a href="http://www.databaseanswers.org/data_models/traffic_cops_and_tickets/index.htm">Lien vers la base de données original!</a></b>
+        <br><br><br>
+
+    </body>
 </html>

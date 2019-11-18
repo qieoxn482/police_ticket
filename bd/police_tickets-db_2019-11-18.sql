@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Client :  127.0.0.1:3306
--- Généré le :  Lun 18 Novembre 2019 à 00:34
--- Version du serveur :  5.6.35
--- Version de PHP :  7.1.1
+-- Host: 127.0.0.1:3306
+-- Generation Time: Nov 18, 2019 at 04:40 AM
+-- Server version: 8.0.17
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `police_tickets`
+-- Database: `police_tickets`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -31,23 +33,31 @@ CREATE TABLE `categories` (
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`) VALUES
+(1, 'route'),
+(2, 'domicile');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `files`
+-- Table structure for table `files`
 --
 
 CREATE TABLE `files` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `path` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `path` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1 = Active, 0 = Inactive'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Contenu de la table `files`
+-- Dumping data for table `files`
 --
 
 INSERT INTO `files` (`id`, `name`, `path`, `created`, `modified`, `status`) VALUES
@@ -58,7 +68,7 @@ INSERT INTO `files` (`id`, `name`, `path`, `created`, `modified`, `status`) VALU
 -- --------------------------------------------------------
 
 --
--- Structure de la table `files_violations`
+-- Table structure for table `files_violations`
 --
 
 CREATE TABLE `files_violations` (
@@ -68,7 +78,7 @@ CREATE TABLE `files_violations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `files_violations`
+-- Dumping data for table `files_violations`
 --
 
 INSERT INTO `files_violations` (`id`, `violation_id`, `file_id`) VALUES
@@ -79,22 +89,61 @@ INSERT INTO `files_violations` (`id`, `violation_id`, `file_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `i18n`
+-- Table structure for table `groups`
+--
+
+CREATE TABLE `groups` (
+  `id` int(11) NOT NULL,
+  `categories_id` int(11) NOT NULL,
+  `subcategories_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `groups`
+--
+
+INSERT INTO `groups` (`id`, `categories_id`, `subcategories_id`, `name`) VALUES
+(1, 1, 3, 'Roule a 130 Km/h'),
+(2, 2, 1, 'Batteur d\'enfant');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `i18n`
 --
 
 CREATE TABLE `i18n` (
   `id` int(11) NOT NULL,
-  `locale` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
-  `model` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `locale` varchar(6) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `model` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `foreign_key` int(10) NOT NULL,
-  `field` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `content` text COLLATE utf8_unicode_ci
+  `field` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `content` text CHARACTER SET utf8 COLLATE utf8_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `phinxlog`
+-- Table structure for table `jurisdictions`
+--
+
+CREATE TABLE `jurisdictions` (
+  `id` int(11) NOT NULL,
+  `location` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `jurisdictions`
+--
+
+INSERT INTO `jurisdictions` (`id`, `location`) VALUES
+(2, 'Laval');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `phinxlog`
 --
 
 CREATE TABLE `phinxlog` (
@@ -106,16 +155,20 @@ CREATE TABLE `phinxlog` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `phinxlog`
+-- Dumping data for table `phinxlog`
 --
 
 INSERT INTO `phinxlog` (`version`, `migration_name`, `start_time`, `end_time`, `breakpoint`) VALUES
-(20191015221801, 'Initial', '2019-10-16 02:18:04', '2019-10-16 02:18:04', 0);
+(20191015221801, 'Initial', '2019-10-16 02:18:04', '2019-10-16 02:18:04', 0),
+(20191117230649, 'Initial', '2019-11-18 04:06:51', '2019-11-18 04:06:51', 0),
+(20191117231110, 'Initial', '2019-11-18 04:11:11', '2019-11-18 04:11:11', 0),
+(20191117231330, 'Initial', '2019-11-18 04:13:31', '2019-11-18 04:13:31', 0),
+(20191117231648, 'Initial', '2019-11-18 04:16:49', '2019-11-18 04:16:49', 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `roles`
+-- Table structure for table `roles`
 --
 
 CREATE TABLE `roles` (
@@ -124,7 +177,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Contenu de la table `roles`
+-- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`id`, `name`) VALUES
@@ -135,7 +188,7 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `subcategories`
+-- Table structure for table `subcategories`
 --
 
 CREATE TABLE `subcategories` (
@@ -144,45 +197,55 @@ CREATE TABLE `subcategories` (
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `subcategories`
+--
+
+INSERT INTO `subcategories` (`id`, `category_id`, `name`) VALUES
+(1, 2, 'abus'),
+(2, 2, 'vandalisme'),
+(3, 1, 'speeding'),
+(4, 1, 'parking');
+
 -- --------------------------------------------------------
 
 --
--- Structure de la table `tickets`
+-- Table structure for table `tickets`
 --
 
 CREATE TABLE `tickets` (
   `id` int(11) NOT NULL,
-  `licence_plate` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `licence_plate` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `datetime_issued` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `datetime_paid` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Contenu de la table `tickets`
+-- Dumping data for table `tickets`
 --
 
-INSERT INTO `tickets` (`id`, `licence_plate`, `datetime_issued`, `datetime_paid`) VALUES
-(10, 'U9W 9D6', '2019-10-16 00:09:00', NULL);
+INSERT INTO `tickets` (`id`, `licence_plate`, `datetime_paid`) VALUES
+(10, 'U9W 9D6', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Contenu de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `phone`, `email`, `password`, `created`, `modified`) VALUES
@@ -193,19 +256,19 @@ INSERT INTO `users` (`id`, `role_id`, `name`, `phone`, `email`, `password`, `cre
 -- --------------------------------------------------------
 
 --
--- Structure de la table `violations`
+-- Table structure for table `violations`
 --
 
 CREATE TABLE `violations` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `fee_amount` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fee_amount` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `violation_datetime` datetime NOT NULL,
-  `violation_description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `violation_description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Contenu de la table `violations`
+-- Dumping data for table `violations`
 --
 
 INSERT INTO `violations` (`id`, `user_id`, `fee_amount`, `violation_datetime`, `violation_description`) VALUES
@@ -216,7 +279,7 @@ INSERT INTO `violations` (`id`, `user_id`, `fee_amount`, `violation_datetime`, `
 -- --------------------------------------------------------
 
 --
--- Structure de la table `violations_tickets`
+-- Table structure for table `violations_tickets`
 --
 
 CREATE TABLE `violations_tickets` (
@@ -226,30 +289,30 @@ CREATE TABLE `violations_tickets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Contenu de la table `violations_tickets`
+-- Dumping data for table `violations_tickets`
 --
 
 INSERT INTO `violations_tickets` (`id`, `ticket_id`, `violation_id`) VALUES
 (5, 10, 8);
 
 --
--- Index pour les tables exportées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `files`
+-- Indexes for table `files`
 --
 ALTER TABLE `files`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `files_violations`
+-- Indexes for table `files_violations`
 --
 ALTER TABLE `files_violations`
   ADD PRIMARY KEY (`id`),
@@ -257,52 +320,67 @@ ALTER TABLE `files_violations`
   ADD KEY `file_id` (`file_id`);
 
 --
--- Index pour la table `i18n`
+-- Indexes for table `groups`
+--
+ALTER TABLE `groups`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category_id` (`categories_id`,`subcategories_id`),
+  ADD KEY `category_id_2` (`categories_id`,`subcategories_id`),
+  ADD KEY `subcategory_id` (`subcategories_id`);
+
+--
+-- Indexes for table `i18n`
 --
 ALTER TABLE `i18n`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `phinxlog`
+-- Indexes for table `jurisdictions`
+--
+ALTER TABLE `jurisdictions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `phinxlog`
 --
 ALTER TABLE `phinxlog`
   ADD PRIMARY KEY (`version`);
 
 --
--- Index pour la table `roles`
+-- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `subcategories`
+-- Indexes for table `subcategories`
 --
 ALTER TABLE `subcategories`
   ADD PRIMARY KEY (`id`),
   ADD KEY `category_id` (`category_id`);
 
 --
--- Index pour la table `tickets`
+-- Indexes for table `tickets`
 --
 ALTER TABLE `tickets`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD KEY `role_id` (`role_id`);
 
 --
--- Index pour la table `violations`
+-- Indexes for table `violations`
 --
 ALTER TABLE `violations`
   ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Index pour la table `violations_tickets`
+-- Indexes for table `violations_tickets`
 --
 ALTER TABLE `violations_tickets`
   ADD PRIMARY KEY (`id`),
@@ -310,81 +388,117 @@ ALTER TABLE `violations_tickets`
   ADD KEY `ticket_id` (`ticket_id`);
 
 --
--- AUTO_INCREMENT pour les tables exportées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT pour la table `files`
+-- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
--- AUTO_INCREMENT pour la table `files_violations`
+-- AUTO_INCREMENT for table `files_violations`
 --
 ALTER TABLE `files_violations`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- AUTO_INCREMENT pour la table `i18n`
+-- AUTO_INCREMENT for table `groups`
+--
+ALTER TABLE `groups`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `i18n`
 --
 ALTER TABLE `i18n`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT pour la table `roles`
+-- AUTO_INCREMENT for table `jurisdictions`
+--
+ALTER TABLE `jurisdictions`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT pour la table `subcategories`
+-- AUTO_INCREMENT for table `subcategories`
 --
 ALTER TABLE `subcategories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
--- AUTO_INCREMENT pour la table `tickets`
+-- AUTO_INCREMENT for table `tickets`
 --
 ALTER TABLE `tickets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
--- AUTO_INCREMENT pour la table `violations`
+-- AUTO_INCREMENT for table `violations`
 --
 ALTER TABLE `violations`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- AUTO_INCREMENT pour la table `violations_tickets`
+-- AUTO_INCREMENT for table `violations_tickets`
 --
 ALTER TABLE `violations_tickets`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
--- Contraintes pour les tables exportées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `users`
+-- Constraints for table `groups`
+--
+ALTER TABLE `groups`
+  ADD CONSTRAINT `groups_ibfk_1` FOREIGN KEY (`categories_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `groups_ibfk_2` FOREIGN KEY (`subcategories_id`) REFERENCES `subcategories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `subcategories`
+--
+ALTER TABLE `subcategories`
+  ADD CONSTRAINT `subcategories_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `users`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `violations`
+-- Constraints for table `violations`
 --
 ALTER TABLE `violations`
   ADD CONSTRAINT `violations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `violations_tickets`
+-- Constraints for table `violations_tickets`
 --
 ALTER TABLE `violations_tickets`
   ADD CONSTRAINT `violations_tickets_ibfk_1` FOREIGN KEY (`violation_id`) REFERENCES `violations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `violations_tickets_ibfk_2` FOREIGN KEY (`ticket_id`) REFERENCES `tickets` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
