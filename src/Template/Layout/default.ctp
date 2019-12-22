@@ -18,6 +18,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <!DOCTYPE html>
 <html>
 <head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js" ></script>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
@@ -48,6 +49,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                 ], ['block' => 'scriptLibraries']
         );
         ?>
+
 </head>
 <body>
     <nav class="top-bar expanded" data-topbar role="navigation">

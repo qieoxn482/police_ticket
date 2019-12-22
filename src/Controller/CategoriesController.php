@@ -24,6 +24,19 @@ class CategoriesController extends AppController
         $this->set(compact('categories'));
     }
 
+    public function getCategories() {
+        $this->autoRender = false; // avoid to render view
+
+        $categories = $this->Categories->find('all', [
+            'contain' => ['Subcategories'],
+        ]);
+
+        $categoriesJ = json_encode($categories);
+        $this->response->type('json');
+        $this->response->body($categoriesJ);
+
+    }
+
     /**
      * View method
      *
@@ -111,20 +124,20 @@ class CategoriesController extends AppController
 
         #admin
         if($user['role_id'] === 1){
-            if (in_array($action, ['index', 'view','add','edit','delete'])){
+            if (in_array($action, ['index', 'view','add','edit','delete', 'getCategories'])){
                 return true;
             }
         }
 
         #chief
         elseif ($user['role_id'] === 3){
-            if (in_array($action, ['index', 'view','add','edit','delete'])){
+            if (in_array($action, ['index', 'view','add','edit','delete', 'getCategories'])){
                 return true;
             }
         }
         #officer
         elseif ($user['role_id'] === 2){
-            if (in_array($action, ['index', 'view'])){
+            if (in_array($action, ['index', 'view', 'getCategories'])){
                 return true;
             }
         }
